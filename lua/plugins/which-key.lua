@@ -3,6 +3,10 @@ return {
     event = "VeryLazy",
     opts = {
         spec = {
+            { "<leader>u", "<cmd>UndotreeToggle<cr>", desc = "Toggle undo tree", group = "Undo Tree", mode = "n" }, -- group
+            
+            { "<leader>n", "<cmd>Telescope notify<cr>", desc = "Show notifications", group = "Notify", mode = "n" }, -- group
+            
             -- Files
             { "<leader>f", group = "File" }, -- group
             { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find File", mode = "n" },
@@ -46,7 +50,7 @@ return {
             { "<leader>c", group = "Code" },
             { "<leader>cf", "<cmd>Telescope quickfix<cr>", desc = "Quick fixes", mode = "n" },
             { "<leader>cd", "<cmd>Telescope diagnostics<cr>", desc = "Diagnostics", mode = "n" },
-            { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason", mode = "n" }
+            { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason", mode = "n" },
         }
     }
 }

@@ -19,8 +19,13 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("plugins")
+require("lazy").setup(
+    {
+        {import = "plugins"},
+        {import = "plugins.lsp"}
+    }
+)
 require("telescope").load_extension("notify") 
 
 vim.notify = require("notify")
-vim.notify("! Welcome !")
+-- vim.notify("! Welcome !")
