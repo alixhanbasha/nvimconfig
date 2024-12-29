@@ -23,7 +23,8 @@ return {
                 "ts_ls", "html", "cssls",
                 "tailwindcss", "svelte", "lua_ls",
                 "graphql", "emmet_ls", "prismals",
-                "pyright", "jdtls",
+                "pyright", "jdtls", "cucumber_language_server", 
+                "gopls", "jsonls", "marksman", "phpactor", "csharp_ls", 
             },
             automatic_installation = true,
         })

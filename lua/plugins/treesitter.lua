@@ -6,7 +6,7 @@ return {
             "lua", "bash", "java", 
             "javascript", "typescript", 
             "go", "rust", "c", 
-            "python", "php" 
+            "python", "php", "gherkin", "c_sharp" 
         },
         highlight = { enable = true },
         indent = { enable = true }

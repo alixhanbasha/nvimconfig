@@ -58,6 +58,33 @@ return {
         lspconfig["jdtls"].setup({
             capabilities = capabilities
         })
+        
+        lspconfig["cucumber_language_server"].setup({
+            capabilities = capabilities,
+            filetypes = { 
+                "feature", "gherkin", "cucumber"
+            }
+        })
+
+        lspconfig["gopls"].setup({
+            capabilities = capabilities
+        })
+
+        lspconfig["jsonls"].setup({
+            capabilities = capabilities
+        })
+
+        lspconfig["marksman"].setup({
+            capabilities = capabilities
+        })
+
+        lspconfig["phpactor"].setup({
+            capabilities = capabilities
+        })
+
+        lspconfig["csharp_ls"].setup({
+            capabilities = capabilities
+        })
 
         lspconfig["emmet-ls"].setup({
             capabilities = capabilities,
