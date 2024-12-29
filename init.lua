@@ -25,7 +25,7 @@ require("lazy").setup(
         {import = "plugins.lsp"}
     }
 )
-require("telescope").load_extension("notify") 
+require("telescope").load_extension("notify")
 
 vim.notify = require("notify")
 -- vim.notify("! Welcome !")

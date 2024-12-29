@@ -14,18 +14,20 @@ return {
         local wk = require("which-key")
 
         wk.add({
-            { "<leader>cr", "<cmd>Telescope lsp_references<cr>", desc = "References", mode = "n" },
-            { "<leader>cD", vim.lsp.buf.declaration, desc = "Go to definition", mode = "n" },
-            { "<leader>cd", "<cmd>Telescope lsp_definitions<cr>", desc = "Definitions", mode = "n" },
-            { "<leader>ci", "<cmd>Telescope lsp_implementations<cr>", desc = "Implementations", mode = "n" },
-            { "<leader>ct", "<cmd>Telescope lsp_type_definitions<cr>", desc = "Type Definitions", mode = "n" },
-            { "<leader>ca", vim.lsp.buf.code_action, desc = "Code actions", mode = "n" },
-            { "<leader>cn", vim.lsp.buf.rename, desc = "Smart rename", mode = "n" },
-            { "<leader>cR", vim.diagnostic.open_float, desc = "Line diagnostics", mode = "n" },
+            { "<leader>l", group = "LSP" },
+            { "<leader>ll", "<cmd>Telescope diagnostics<cr>", desc = "Diagnostics", mode = "n" },
+            { "<leader>lr", "<cmd>Telescope lsp_references<cr>", desc = "References", mode = "n" },
+            { "<leader>lD", vim.lsp.buf.declaration, desc = "Go to definition", mode = "n" },
+            { "<leader>ld", "<cmd>Telescope lsp_definitions<cr>", desc = "Definitions", mode = "n" },
+            { "<leader>li", "<cmd>Telescope lsp_implementations<cr>", desc = "Implementations", mode = "n" },
+            { "<leader>lt", "<cmd>Telescope lsp_type_definitions<cr>", desc = "Type Definitions", mode = "n" },
+            { "<leader>la", vim.lsp.buf.code_action, desc = "Code actions", mode = "n" },
+            { "<leader>ln", vim.lsp.buf.rename, desc = "Smart rename", mode = "n" },
+            { "<leader>lR", vim.diagnostic.open_float, desc = "Line diagnostics", mode = "n" },
             { "]d", vim.diagnostic.goto_next, desc = "Goto next diagnostic", mode = "n" },
             { "[d", vim.diagnostic.goto_prev, desc = "Goto previous diagnostic", mode = "n" },
-            { "<leader>cH", vim.lsp.buf.hover, desc = "Show documentation", mode = "n" },
-            { "<leader>cS", ":LspRestart<CR>", desc = "Restart LSP", mode = "n" },
+            { "<leader>lh", vim.lsp.buf.hover, desc = "Show documentation", mode = "n" },
+            { "<leader>ls", ":LspRestart<CR>", desc = "Restart LSP", mode = "n" },
         })
 
         local capabilities = cmp_nvim_lsp.default_capabilities()
@@ -42,7 +44,7 @@ return {
         lspconfig["ts_ls"].setup({
             capabilities = capabilities
         })
-        
+
         lspconfig["cssls"].setup({
             capabilities = capabilities
         })
@@ -50,18 +52,18 @@ return {
         lspconfig["tailwindcss"].setup({
             capabilities = capabilities
         })
-        
+
         lspconfig["pyright"].setup({
             capabilities = capabilities
         })
-        
+
         lspconfig["jdtls"].setup({
             capabilities = capabilities
         })
-        
+
         lspconfig["cucumber_language_server"].setup({
             capabilities = capabilities,
-            filetypes = { 
+            filetypes = {
                 "feature", "gherkin", "cucumber"
             }
         })
@@ -89,7 +91,7 @@ return {
         lspconfig["emmet-ls"].setup({
             capabilities = capabilities,
             filetypes = {
-                "html", "typescriptreact", "javascriptreact", 
+                "html", "typescriptreact", "javascriptreact",
                 "css", "sass", "scss", "less", "svelte",
             },
         })
