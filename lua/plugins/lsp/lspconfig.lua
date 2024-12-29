@@ -1,3 +1,4 @@
+
 return {
     "neovim/nvim-lspconfig",
     event = {
@@ -30,11 +31,58 @@ return {
         local capabilities = cmp_nvim_lsp.default_capabilities()
         local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
         for type, icon in pairs(signs) do
-            local hl = "Diagnostic sign: " .. type
-            vim.fn.sign_define(hl, {text = icon, texthl = hl, numhl = ""})
+            local hl = "DiagnosticSign" .. type
+            vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
         end
 
+        lspconfig["html"].setup({
+            capabilities = capabilities
+        })
+
+        lspconfig["ts_ls"].setup({
+            capabilities = capabilities
+        })
         
+        lspconfig["cssls"].setup({
+            capabilities = capabilities
+        })
+
+        lspconfig["tailwindcss"].setup({
+            capabilities = capabilities
+        })
+        
+        lspconfig["pyright"].setup({
+            capabilities = capabilities
+        })
+        
+        lspconfig["jdtls"].setup({
+            capabilities = capabilities
+        })
+
+        lspconfig["emmet-ls"].setup({
+            capabilities = capabilities,
+            filetypes = {
+                "html", "typescriptreact", "javascriptreact", 
+                "css", "sass", "scss", "less", "svelte",
+            },
+        })
+
+        lspconfig["lua_ls"].setup({
+            capabilities = capabilities,
+            settings = {
+                Lua = {
+                    diagnostics = {
+                        globals = { "vim" }
+                    },
+                    workspace = {
+                        library = {
+                            [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+                            [vim.fn.stdpath("config") .. "/lua"] = true
+                        }
+                    },
+                },
+            },
+        })
 
     end,
 }
